@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipments-api
+  labels:
+    app: shipments-api
+    version: 1.0.4
+spec:
+  selector:
+    matchLabels:
+      app: shipments-api
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shipments-api
+    spec:
+      serviceAccountName: vault
+      containers:
+        - name: shipments-api
+          image: citizenkaraba/shipments-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

@@ -1,0 +1,5 @@
+/.idea/
+/shipments-master/target/
+/shipments-master/shipments-master.iml
+/shipments-api/target/
+/shipments-api/shipments-api.iml
